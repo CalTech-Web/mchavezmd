@@ -544,9 +544,7 @@ export default function Homepage2() {
                   href={service.href}
                   className="group relative"
                 >
-                  <div
-                    className={`relative rounded-2xl overflow-hidden ${service.featured ? "h-80" : "h-64"}`}
-                  >
+                  <div className="relative rounded-2xl overflow-hidden h-64">
                     <Image
                       src={service.image}
                       alt={service.title}
