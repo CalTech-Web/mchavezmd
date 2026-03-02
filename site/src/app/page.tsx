@@ -114,9 +114,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
-              Procedural
-              <br />
-              Medicine.
+              Procedural Medicine.
               <br />
               <span
                 className="font-normal italic"
