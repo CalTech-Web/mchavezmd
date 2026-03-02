@@ -16,22 +16,18 @@ import {
   Clock,
   Star,
   Quote,
+  CheckCircle2,
+  ChevronRight,
 } from "lucide-react";
 
 const services = [
-  {
-    title: "Family Medicine",
-    href: "/family-medicine",
-    icon: Stethoscope,
-    image: "/images/family-medicine.jpg",
-    tagline: "Primary care for the whole family",
-  },
   {
     title: "Knee Pain",
     href: "/knee-pain",
     icon: Bone,
     image: "/images/knee-pain.jpg",
     tagline: "Restore mobility and comfort",
+    featured: true,
   },
   {
     title: "Regenerative Medicine",
@@ -39,6 +35,21 @@ const services = [
     icon: FlaskConical,
     image: "/images/regenerative-medicine.jpg",
     tagline: "Pioneering soft-tissue repair",
+    featured: true,
+  },
+  {
+    title: "Musculoskeletal Pain",
+    href: "/musculoskeletal-pain",
+    icon: Activity,
+    image: "/images/musculoskeletal-pain.jpg",
+    tagline: "Holistic pain management",
+  },
+  {
+    title: "Family Medicine",
+    href: "/family-medicine",
+    icon: Stethoscope,
+    image: "/images/family-medicine.jpg",
+    tagline: "Primary care for the whole family",
   },
   {
     title: "Medical Botox",
@@ -53,13 +64,6 @@ const services = [
     icon: Scissors,
     image: "/images/minor-surgery.jpg",
     tagline: "Same-day procedures",
-  },
-  {
-    title: "Musculoskeletal",
-    href: "/musculoskeletal-pain",
-    icon: Activity,
-    image: "/images/musculoskeletal-pain.jpg",
-    tagline: "Holistic pain management",
   },
   {
     title: "Women's Health",
@@ -80,9 +84,9 @@ const services = [
 export default function Homepage2() {
   return (
     <div>
-      {/* Hero - Full-screen minimalist with large serif-style type */}
+      {/* Hero - Knee Pain & Regen focused */}
       <section className="relative min-h-[90vh] flex items-center bg-[#faf9f7] overflow-hidden">
-        {/* Decorative dot grid - fades from text area outward */}
+        {/* Decorative dot grid */}
         <div
           className="absolute inset-0 pointer-events-none select-none"
           style={{
@@ -97,8 +101,8 @@ export default function Homepage2() {
         />
         <div className="absolute top-0 right-0 w-3/5 h-full hidden lg:block">
           <Image
-            src="/images/hero-stethoscope.jpg"
-            alt="M. Chavez MD practice"
+            src="/images/knee-pain.jpg"
+            alt="Knee pain and regenerative medicine - M. Chavez MD"
             fill
             className="object-cover object-center"
             priority
@@ -114,9 +118,9 @@ export default function Homepage2() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
-              Procedural
+              Stop Living
               <br />
-              Medicine.
+              With Knee Pain.
               <br />
               <span
                 className="font-normal italic"
@@ -128,13 +132,30 @@ export default function Homepage2() {
                   backgroundClip: "text",
                 }}
               >
-                Authentic Care.
+                Heal Naturally.
               </span>
             </h1>
             <p className="mt-8 text-lg text-gray-500 leading-relaxed max-w-md">
-              Board-certified family medicine with 28+ years of experience.
-              Where clinical excellence meets genuine compassion.
+              Board-certified physician with 28+ years of experience in
+              regenerative medicine and knee injections - restoring mobility
+              without surgery.
             </p>
+            <div className="mt-8 flex flex-col gap-2.5">
+              {[
+                "PRP & regenerative injections",
+                "Joint injections for knee pain",
+                "Osteoarthritis treatment",
+                "Non-surgical approach",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5">
+                  <CheckCircle2
+                    size={16}
+                    className="text-secondary flex-shrink-0"
+                  />
+                  <span className="text-sm text-gray-600">{item}</span>
+                </div>
+              ))}
+            </div>
             <div className="mt-10 flex items-center gap-6">
               <Link
                 href="/schedule"
@@ -174,14 +195,24 @@ export default function Homepage2() {
               <div className="flex items-center gap-2.5 pr-4 border-r border-gray-200">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={12} className="fill-accent text-accent" />
+                    <Star
+                      key={i}
+                      size={12}
+                      className="fill-accent text-accent"
+                    />
                   ))}
                 </div>
-                <span className="text-xs font-medium text-gray-700">Highly Rated</span>
+                <span className="text-xs font-medium text-gray-700">
+                  Highly Rated
+                </span>
               </div>
               <div>
-                <p className="text-xs font-semibold text-gray-900">Board-Certified FAAFP</p>
-                <p className="text-xs text-gray-500 mt-0.5">Illinois Licensed · Since 1997</p>
+                <p className="text-xs font-semibold text-gray-900">
+                  Board-Certified FAAFP
+                </p>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Illinois Licensed - Since 1997
+                </p>
               </div>
             </div>
           </div>
@@ -194,27 +225,35 @@ export default function Homepage2() {
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
             {[
               { icon: Clock, top: "28+", bottom: "Years Experience" },
-              { icon: Star, top: "FAAFP", bottom: "Board Certified" },
-              { icon: Users, top: "Walk-Ins", bottom: "Welcome Daily" },
+              { icon: FlaskConical, top: "Regen", bottom: "Specialist" },
+              { icon: Bone, top: "Knee", bottom: "Injections" },
               { icon: MapPin, top: "Free", bottom: "On-Site Parking" },
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.bottom} className="py-8 px-6 text-center group hover:bg-gray-50/60 transition-colors duration-200">
+                <div
+                  key={item.bottom}
+                  className="py-8 px-6 text-center group hover:bg-gray-50/60 transition-colors duration-200"
+                >
                   <div className="flex items-center justify-center mb-3">
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center"
                       style={{
-                        background: "linear-gradient(135deg, rgba(107,76,154,0.10) 0%, rgba(74,155,127,0.10) 100%)",
+                        background:
+                          "linear-gradient(135deg, rgba(107,76,154,0.10) 0%, rgba(74,155,127,0.10) 100%)",
                       }}
                     >
-                      <Icon size={16} className="text-primary/60 group-hover:text-primary transition-colors duration-200" />
+                      <Icon
+                        size={16}
+                        className="text-primary/60 group-hover:text-primary transition-colors duration-200"
+                      />
                     </div>
                   </div>
                   <p
                     className="text-2xl font-light"
                     style={{
-                      background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                      background:
+                        "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -232,16 +271,260 @@ export default function Homepage2() {
         </div>
       </section>
 
-      {/* Services - Horizontal Scroll Cards */}
+      {/* Spotlight - Knee Pain & Regenerative Medicine */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
+              Our Specialty
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              Knee Pain &amp; Regenerative Medicine
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+              Dr. Chavez specializes in non-surgical, injection-based treatments
+              that harness your body&apos;s own healing power to restore function
+              and eliminate chronic pain.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Knee Pain Card */}
+            <Link href="/knee-pain" className="group">
+              <div
+                className="relative rounded-3xl overflow-hidden h-[480px]"
+                style={{
+                  background:
+                    "linear-gradient(145deg, #f5f0fb 0%, #ede8f7 100%)",
+                  border: "1px solid rgba(107,76,154,0.12)",
+                }}
+              >
+                <div className="absolute top-0 right-0 w-1/2 h-full">
+                  <Image
+                    src="/images/knee-pain.jpg"
+                    alt="Knee pain treatment"
+                    fill
+                    className="object-cover object-center opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#f5f0fb]" />
+                </div>
+                <div className="relative p-10 h-full flex flex-col justify-between">
+                  <div>
+                    <div
+                      className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(107,76,154,0.15) 0%, rgba(107,76,154,0.05) 100%)",
+                        border: "1px solid rgba(107,76,154,0.2)",
+                      }}
+                    >
+                      <Bone size={24} style={{ color: "#6B4C9A" }} />
+                    </div>
+                    <h3 className="text-3xl font-light text-gray-900 mb-4">
+                      Knee Pain Treatment
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed mb-6">
+                      Comprehensive evaluations and injection-based treatment
+                      plans that address the root cause of your knee pain -
+                      restoring mobility and quality of life without surgery.
+                    </p>
+                    <ul className="space-y-2">
+                      {[
+                        "Diagnostic evaluations &amp; imaging review",
+                        "Joint injections for pain relief",
+                        "Regenerative treatments",
+                        "Physical therapy referrals",
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-2.5">
+                          <ChevronRight
+                            size={14}
+                            className="text-primary flex-shrink-0"
+                          />
+                          <span
+                            className="text-sm text-gray-600"
+                            dangerouslySetInnerHTML={{ __html: item }}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all duration-200">
+                    Learn about knee pain treatment
+                    <ArrowRight size={16} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Regenerative Medicine Card */}
+            <Link href="/regenerative-medicine" className="group">
+              <div
+                className="relative rounded-3xl overflow-hidden h-[480px]"
+                style={{
+                  background:
+                    "linear-gradient(145deg, #eef8f4 0%, #e5f5ef 100%)",
+                  border: "1px solid rgba(74,155,127,0.12)",
+                }}
+              >
+                <div className="absolute top-0 right-0 w-1/2 h-full">
+                  <Image
+                    src="/images/regenerative-medicine.jpg"
+                    alt="Regenerative medicine"
+                    fill
+                    className="object-cover object-center opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#eef8f4]" />
+                </div>
+                <div className="relative p-10 h-full flex flex-col justify-between">
+                  <div>
+                    <div
+                      className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-6"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(74,155,127,0.15) 0%, rgba(74,155,127,0.05) 100%)",
+                        border: "1px solid rgba(74,155,127,0.2)",
+                      }}
+                    >
+                      <FlaskConical size={24} style={{ color: "#4A9B7F" }} />
+                    </div>
+                    <h3 className="text-3xl font-light text-gray-900 mb-4">
+                      Regenerative Medicine
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed mb-6">
+                      Dr. Chavez is a pioneer in regenerative medicine - using
+                      your body&apos;s own healing abilities to repair soft-tissue
+                      injuries, relieve osteoarthritis, and reduce chronic
+                      inflammation.
+                    </p>
+                    <ul className="space-y-2">
+                      {[
+                        "PRP (Platelet-Rich Plasma) therapy",
+                        "Soft-tissue injury repair",
+                        "Osteoarthritis management",
+                        "Chronic pain relief",
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-2.5">
+                          <ChevronRight
+                            size={14}
+                            className="text-secondary flex-shrink-0"
+                          />
+                          <span className="text-sm text-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex items-center gap-2 text-secondary font-medium text-sm group-hover:gap-3 transition-all duration-200">
+                    Learn about regenerative medicine
+                    <ArrowRight size={16} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works - Treatment Process */}
+      <section
+        className="py-20 md:py-28 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #f5f0fb 0%, #eef8f4 100%)" }}
+      >
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
+              The Process
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              What to Expect
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
+              From your first consultation to restored mobility - a clear,
+              personalized path to pain relief.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              {
+                step: "01",
+                title: "Evaluation",
+                description:
+                  "Thorough knee assessment, review of imaging and medical history to understand the root cause of your pain.",
+                color: "#6B4C9A",
+              },
+              {
+                step: "02",
+                title: "Diagnosis",
+                description:
+                  "A personalized, non-surgical treatment plan tailored to your specific condition, lifestyle, and goals.",
+                color: "#5a7fbf",
+              },
+              {
+                step: "03",
+                title: "Treatment",
+                description:
+                  "In-office injections or regenerative procedures performed by Dr. Chavez - often same-day, no hospital required.",
+                color: "#4A9B7F",
+              },
+              {
+                step: "04",
+                title: "Follow-Up",
+                description:
+                  "Ongoing monitoring and adjustments to ensure lasting relief and optimal recovery of your joint function.",
+                color: "#6B4C9A",
+              },
+            ].map((item) => (
+              <div key={item.step} className="relative">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-7 border border-white/80 h-full">
+                  <span
+                    className="text-5xl font-bold leading-none select-none"
+                    style={{ color: item.color, opacity: 0.15 }}
+                    aria-hidden="true"
+                  >
+                    {item.step}
+                  </span>
+                  <div
+                    className="w-1 h-6 rounded-full my-4"
+                    style={{
+                      background: `linear-gradient(180deg, ${item.color} 0%, ${item.color}44 100%)`,
+                    }}
+                  />
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/schedule"
+              className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary-dark transition-colors"
+            >
+              Schedule a Knee Consultation
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* All Services */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between mb-14">
             <div>
               <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
-                What We Treat
+                Full Service Practice
               </p>
               <h2 className="text-4xl md:text-5xl font-light text-gray-900">
-                Our Specialties
+                All Our Specialties
               </h2>
             </div>
             <Link
@@ -261,7 +544,9 @@ export default function Homepage2() {
                   href={service.href}
                   className="group relative"
                 >
-                  <div className="relative h-64 rounded-2xl overflow-hidden">
+                  <div
+                    className={`relative rounded-2xl overflow-hidden ${service.featured ? "h-80" : "h-64"}`}
+                  >
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -272,6 +557,18 @@ export default function Homepage2() {
                     <div className="absolute inset-0 bg-primary/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {/* Shimmer sweep on hover */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none z-10" />
+                    {service.featured && (
+                      <span
+                        className="absolute top-4 left-4 text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full text-white"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, rgba(107,76,154,0.85) 0%, rgba(74,155,127,0.85) 100%)",
+                          backdropFilter: "blur(4px)",
+                        }}
+                      >
+                        Specialty
+                      </span>
+                    )}
                     <span
                       className="absolute top-3 right-4 text-5xl font-bold leading-none select-none tabular-nums text-white/15 group-hover:text-white/25 transition-colors duration-300"
                       aria-hidden="true"
@@ -303,16 +600,8 @@ export default function Homepage2() {
 
       {/* Mission - Large Pull Quote */}
       <section
-        className="py-20 md:py-28 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #f5f0fb 0%, #eef8f4 100%)" }}
+        className="py-20 md:py-28 relative overflow-hidden bg-white"
       >
-        {/* Top gradient border */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
-        {/* Bottom gradient border */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent pointer-events-none" />
-        {/* Soft glow blobs */}
-        <div className="absolute -left-24 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/8 blur-3xl pointer-events-none" />
-        <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-secondary/8 blur-3xl pointer-events-none" />
         <div className="max-w-5xl mx-auto px-6 text-center relative">
           <div
             className="inline-flex items-center justify-center w-16 h-16 rounded-full mx-auto mb-8"
@@ -354,7 +643,7 @@ export default function Homepage2() {
       </section>
 
       {/* Team - Large Portrait Layout */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-[#faf9f7]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
@@ -370,23 +659,29 @@ export default function Homepage2() {
             <div className="group">
               <div className="relative rounded-2xl mb-6 ring-1 ring-primary/15 group-hover:ring-2 group-hover:ring-primary/35 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
                 <div className="relative h-[28rem] rounded-[14px] overflow-hidden">
-                <Image
-                  src="/team/dr-chavez.jpg"
-                  alt="Dr. Milton Chavez MD, FAAFP"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                  <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">MD, FAAFP - Medical Director</p>
-                  <p className="text-white text-sm leading-relaxed">28+ years in family medicine, non-operative orthopedics, and minor outpatient surgery.</p>
-                </div>
+                  <Image
+                    src="/team/dr-chavez.jpg"
+                    alt="Dr. Milton Chavez MD, FAAFP"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                    <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">
+                      MD, FAAFP - Medical Director
+                    </p>
+                    <p className="text-white text-sm leading-relaxed">
+                      28+ years in family medicine, regenerative medicine,
+                      non-operative orthopedics, and minor outpatient surgery.
+                    </p>
+                  </div>
                 </div>
               </div>
               <h3
                 className="text-2xl font-light"
                 style={{
-                  background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  background:
+                    "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -399,8 +694,8 @@ export default function Homepage2() {
               </span>
               <p className="text-gray-500 text-sm mt-3 leading-relaxed">
                 Board-certified family physician with 28+ years of experience
-                specializing in family medicine, non-operative orthopedics, and
-                minor outpatient surgery.
+                specializing in regenerative medicine, knee injections,
+                non-operative orthopedics, and minor outpatient surgery.
               </p>
             </div>
 
@@ -408,23 +703,29 @@ export default function Homepage2() {
             <div className="group">
               <div className="relative rounded-2xl mb-6 ring-1 ring-secondary/15 group-hover:ring-2 group-hover:ring-secondary/35 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300">
                 <div className="relative h-[28rem] rounded-[14px] overflow-hidden">
-                <Image
-                  src="/team/karen-corona.jpg"
-                  alt="Karen Corona MSN, APRN, FNP-C"
-                  fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                  <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">MSN, APRN, FNP-C - Nurse Practitioner</p>
-                  <p className="text-white text-sm leading-relaxed">Specialized in women&apos;s health, family medicine, inpatient care, and medical weight loss.</p>
-                </div>
+                  <Image
+                    src="/team/karen-corona.jpg"
+                    alt="Karen Corona MSN, APRN, FNP-C"
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                    <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">
+                      MSN, APRN, FNP-C - Nurse Practitioner
+                    </p>
+                    <p className="text-white text-sm leading-relaxed">
+                      Specialized in women&apos;s health, family medicine,
+                      inpatient care, and medical weight loss.
+                    </p>
+                  </div>
                 </div>
               </div>
               <h3
                 className="text-2xl font-light"
                 style={{
-                  background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  background:
+                    "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -446,7 +747,7 @@ export default function Homepage2() {
       </section>
 
       {/* Testimonials - Side by Side */}
-      <section className="py-20 md:py-28 bg-[#faf9f7]">
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
@@ -457,7 +758,7 @@ export default function Homepage2() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-sm relative overflow-hidden">
+            <div className="bg-[#faf9f7] rounded-2xl p-8 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary pointer-events-none" />
               <div
                 className="absolute -top-4 left-4 text-[8rem] leading-none text-primary/10 select-none pointer-events-none"
@@ -477,20 +778,26 @@ export default function Homepage2() {
                   ))}
                 </div>
                 <blockquote className="text-gray-600 leading-relaxed italic">
-                  &ldquo;My visit with Dr. Chavez is always pleasant. I love that
-                  the Doctors take your appointment on time, very attentive and
-                  professional and knowledgeable of my medical history.&rdquo;
+                  &ldquo;My visit with Dr. Chavez is always pleasant. I love
+                  that the Doctors take your appointment on time, very attentive
+                  and professional and knowledgeable of my medical
+                  history.&rdquo;
                 </blockquote>
                 <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-3">
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
-                    style={{ background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)" }}
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                    }}
                     aria-hidden="true"
                   >
                     JH
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">Janneth H.</p>
+                    <p className="font-medium text-gray-900 text-sm">
+                      Janneth H.
+                    </p>
                     <p className="text-xs text-gray-400 mt-0.5">
                       via{" "}
                       <a
@@ -506,7 +813,7 @@ export default function Homepage2() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm relative overflow-hidden">
+            <div className="bg-[#faf9f7] rounded-2xl p-8 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary pointer-events-none" />
               <div
                 className="absolute -top-4 left-4 text-[8rem] leading-none text-primary/10 select-none pointer-events-none"
@@ -534,14 +841,19 @@ export default function Homepage2() {
                 <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-3">
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
-                    style={{ background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)" }}
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                    }}
                     aria-hidden="true"
                   >
                     CM
                   </div>
                   <div>
                     <p className="font-medium text-gray-900 text-sm">Chad M.</p>
-                    <p className="text-xs text-gray-400 mt-0.5">Verified Patient</p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      Verified Patient
+                    </p>
                   </div>
                 </div>
               </div>
@@ -551,15 +863,16 @@ export default function Homepage2() {
       </section>
 
       {/* Hours + Location - Clean Split */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-[#faf9f7]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Hours */}
             <div
               className="rounded-2xl p-8 border border-gray-100 relative overflow-hidden"
-              style={{ background: "linear-gradient(145deg, #faf9f7 0%, #f3f0f9 100%)" }}
+              style={{
+                background: "linear-gradient(145deg, #faf9f7 0%, #f3f0f9 100%)",
+              }}
             >
-              {/* Subtle top gradient accent */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-transparent pointer-events-none" />
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -571,8 +884,8 @@ export default function Homepage2() {
               </div>
               <div className="space-y-2.5">
                 {[
-                  ["Monday", "8:00a - 4:00p"],
-                  ["Tuesday", "8:00a - 5:00p"],
+                  ["Monday", "8:00a - 5:00p"],
+                  ["Tuesday", "8:00a - 6:00p"],
                   ["Wednesday", "8:00a - 4:00p"],
                   ["Thursday", "8:00a - 4:00p"],
                   ["Friday", "8:00a - 4:00p"],
@@ -641,9 +954,8 @@ export default function Homepage2() {
         </div>
       </section>
 
-      {/* CTA - Minimal */}
+      {/* CTA - Knee/Regen focused */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-primary-dark via-primary to-secondary relative overflow-hidden">
-        {/* Dot grid - mirrors hero, anchored to right side */}
         <div
           className="absolute inset-0 pointer-events-none select-none"
           style={{
@@ -660,10 +972,11 @@ export default function Homepage2() {
         <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-white/5 pointer-events-none" />
         <div className="max-w-3xl mx-auto px-6 text-center relative">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
-            Ready to prioritize your health?
+            Ready to move without pain?
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            Walk-ins welcome. New patients accepted. Most PPO, HMO, Medicare & Medicaid plans accepted.
+            Knee injections and regenerative therapy available now. Walk-ins
+            welcome. New patients accepted.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
