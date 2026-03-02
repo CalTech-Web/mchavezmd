@@ -5,7 +5,7 @@ import { CreditCard, Phone } from "lucide-react";
 export const metadata: Metadata = {
   title: "Payment",
   description:
-    "Payment information for M. Chavez MD, SC. We accept Medicare, PPO plans, cash, debit cards, cheques, and Care Credit.",
+    "Payment information for M. Chavez MD, SC. We accept Medicare, Medicaid, PPO and HMO plans, cash, debit cards, cheques, and Care Credit.",
 };
 
 export default function PaymentPage() {
@@ -53,11 +53,11 @@ export default function PaymentPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0" />
-                  Limited HMO plans
+                  Most HMO plans
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0" />
-                  Limited Medicaid plans
+                  Medicaid
                 </li>
               </ul>
               <p className="mt-3 text-xs text-gray-500">

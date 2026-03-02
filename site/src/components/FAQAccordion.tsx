@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "What insurance do you accept?",
     answer:
-      "We currently participate in Medicare, most commercial PPO plans and a limited number of HMO and Medicaid plans. We encourage you to call our office to confirm participation in your insurance plan.",
+      "We currently participate in Medicare, most commercial PPO and HMO plans, and Medicaid. We encourage you to call our office to confirm participation in your specific plan.",
   },
   {
     question: "Can I be seen if I don't have insurance?",

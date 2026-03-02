@@ -163,7 +163,7 @@ export default function Home() {
                 Walk-ins Welcome
               </span>
               <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
-                Most PPO Plans Accepted
+                PPO, HMO, Medicare & Medicaid
               </span>
             </div>
 
@@ -661,7 +661,7 @@ export default function Home() {
             Ready to prioritize your health?
           </h2>
           <p className="text-white/70 text-lg mb-10">
-            Walk-ins welcome. New patients accepted. Most PPO plans accepted.
+            Walk-ins welcome. New patients accepted. Most PPO, HMO, Medicare & Medicaid plans accepted.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
