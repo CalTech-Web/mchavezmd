@@ -9,11 +9,13 @@ import {
   Scissors,
   Activity,
   Users,
-  Clock,
-  MapPin,
-  Phone,
-  Quote,
   ArrowRight,
+  ArrowUpRight,
+  Phone,
+  MapPin,
+  Clock,
+  Star,
+  Quote,
 } from "lucide-react";
 
 const services = [
@@ -22,284 +24,274 @@ const services = [
     href: "/family-medicine",
     icon: Stethoscope,
     image: "/images/family-medicine.jpg",
-    description:
-      "Comprehensive and compassionate primary care focused on helping you achieve optimal health and wellness.",
+    tagline: "Primary care for the whole family",
   },
   {
     title: "Knee Pain",
     href: "/knee-pain",
     icon: Bone,
     image: "/images/knee-pain.jpg",
-    description:
-      "Comprehensive evaluations and treatment plans to alleviate knee discomfort and restore mobility.",
+    tagline: "Restore mobility and comfort",
   },
   {
     title: "Regenerative Medicine",
     href: "/regenerative-medicine",
     icon: FlaskConical,
     image: "/images/regenerative-medicine.jpg",
-    description:
-      "Pioneering regenerative medicine for soft-tissue repair, chronic pain relief, and rejuvenation.",
+    tagline: "Pioneering soft-tissue repair",
   },
   {
     title: "Medical Botox",
     href: "/medical-botox",
     icon: Syringe,
     image: "/images/medical-botox.jpg",
-    description:
-      "Medical Botox treatments for migraines, hyperhidrosis, and other conditions beyond cosmetic use.",
+    tagline: "Beyond cosmetic applications",
   },
   {
     title: "Minor Surgery",
     href: "/minor-surgery",
     icon: Scissors,
     image: "/images/minor-surgery.jpg",
-    description:
-      "Same-day minor surgical procedures for moles, skin tags, and cysts - no referrals required.",
+    tagline: "Same-day procedures",
   },
   {
-    title: "Musculoskeletal Pain",
+    title: "Musculoskeletal",
     href: "/musculoskeletal-pain",
     icon: Activity,
     image: "/images/musculoskeletal-pain.jpg",
-    description:
-      "Holistic and alternative therapies to help you heal and rehabilitate joint and muscle pain.",
+    tagline: "Holistic pain management",
   },
   {
     title: "Women's Health",
     href: "/womens-wellness",
     icon: Heart,
     image: "/images/immediate-care.jpg",
-    description:
-      "Comprehensive care throughout a woman's journey from puberty through menopause.",
+    tagline: "Comprehensive women's care",
   },
   {
     title: "Men's Health",
     href: "/mens-wellness",
     icon: Users,
     image: "/images/hero-stethoscope.jpg",
-    description:
-      "Individualized, holistic care tailored to men's unique healthcare needs and conditions.",
+    tagline: "Tailored men's wellness",
   },
 ];
 
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-dark to-[#3a2560] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      {/* Hero - Full-screen minimalist with large serif-style type */}
+      <section className="relative min-h-[90vh] flex items-center bg-[#faf9f7] overflow-hidden">
+        {/* Decorative dot grid - fades from text area outward */}
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(107, 76, 154, 0.14) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage:
+              "radial-gradient(ellipse 55% 70% at 18% 50%, black 0%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 55% 70% at 18% 50%, black 0%, transparent 100%)",
+          }}
+        />
+        <div className="absolute top-0 right-0 w-3/5 h-full hidden lg:block">
           <Image
             src="/images/hero-stethoscope.jpg"
-            alt=""
+            alt="M. Chavez MD practice"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#faf9f7] via-[#faf9f7]/60 to-transparent" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-24 md:py-32 lg:py-40">
-          <div className="max-w-2xl">
-            <p className="text-secondary-light font-medium mb-4 text-lg">
-              Welcome to M. Chavez MD, SC
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Procedural Medicine.
+        <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary">
+                Wicker Park, Chicago
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
+              Procedural
               <br />
-              <span className="text-secondary-light">Authentic Care.</span>
+              Medicine.
+              <br />
+              <span
+                className="font-normal italic"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Authentic Care.
+              </span>
             </h1>
-            <p className="mt-6 text-lg text-white/80 max-w-xl">
-              Board-certified family medicine practice in Wicker Park, Chicago
-              specializing in procedural medicine and preventive health.
+            <p className="mt-8 text-lg text-gray-500 leading-relaxed max-w-md">
+              Board-certified family medicine with 28+ years of experience.
+              Where clinical excellence meets genuine compassion.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-10 flex items-center gap-6">
               <Link
                 href="/schedule"
-                className="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-light text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary-dark transition-colors"
               >
-                Schedule Appointment
-                <ArrowRight size={20} />
+                Book Appointment
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </Link>
               <a
                 href="tel:7732273303"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="text-gray-500 hover:text-primary transition-colors font-medium"
               >
-                <Phone size={20} />
                 (773) 227-3303
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Bar */}
-      <section className="bg-primary-dark text-white py-6 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { value: "28+", label: "Years in Family Medicine" },
-              { value: "FAAFP", label: "Board-Certified Fellow" },
-              { value: "Walk-Ins", label: "Always Welcome" },
-              { value: "Free", label: "Parking Available" },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1">
-                <span className="text-2xl md:text-3xl font-bold text-secondary-light">
-                  {stat.value}
+            <div className="mt-8 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary bg-secondary/10 px-3 py-1.5 rounded-full">
+                <span className="relative flex w-1.5 h-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
+                  <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-secondary" />
                 </span>
-                <span className="text-sm text-white/70">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Info */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our Mission
-              </h2>
-              <blockquote className="text-lg text-gray-600 italic border-l-4 border-primary pl-6 mb-8">
-                &ldquo;The entire team at M. Chavez, MD, SC strives to inspire
-                and aid those seeking their optimal health, wellness and healing
-                through efficient service, quality consultations and our core
-                values: integrity and respect.&rdquo;
-              </blockquote>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Our Vision
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                We specialize in procedural medicine and preventive health and
-                wellness and offer a variety of services from weight loss
-                management to travel medicine. Our vision is to be your entry
-                point for comprehensive and complete care in Wicker Park and
-                surrounding areas.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors mb-6"
-              >
-                Meet Our Team
-                <ArrowRight size={18} />
-              </Link>
-
-              <div className="bg-primary/5 rounded-xl p-6 mt-6">
-                <Quote size={24} className="text-primary/40 mb-2" />
-                <blockquote className="text-gray-700 italic text-sm">
-                  &ldquo;My visit with Dr. Chavez is always pleasant. I love
-                  that the Doctors take your appointment on time, very attentive
-                  and professional and knowledgeable of my medical
-                  history.&rdquo;
-                </blockquote>
-                <p className="mt-2 text-sm font-semibold text-primary">
-                  - Janneth H.
-                </p>
-                <p className="text-xs text-gray-400 mt-1">
-                  via{" "}
-                  <a
-                    href="https://www.tebra.com/care/provider/milton-chavez-md-1700869450"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-primary"
-                  >
-                    Tebra
-                  </a>
-                </p>
-              </div>
+                Accepting New Patients
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+                Walk-ins Welcome
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+                Most PPO Plans Accepted
+              </span>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Clock size={22} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold">
-                    Office / Telehealth Hours
-                  </h3>
-                </div>
-                <div className="space-y-2 text-sm">
-                  {[
-                    ["Monday", "8:00a - 5:00p"],
-                    ["Tuesday", "8:00a - 6:00p"],
-                    ["Wednesday", "8:00a - 4:00p"],
-                    ["Thursday", "8:00a - 4:00p"],
-                    ["Friday", "8:00a - 4:00p"],
-                    ["Saturday", "8:00a - 12:00p"],
-                  ].map(([day, hours]) => (
-                    <div
-                      key={day}
-                      className="flex justify-between py-1 border-b border-gray-100 last:border-0"
-                    >
-                      <span className="font-medium text-gray-700">{day}</span>
-                      <span className="text-gray-600">{hours}</span>
-                    </div>
+            {/* Floating credential badge - desktop only */}
+            <div className="mt-8 hidden lg:inline-flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200/70 rounded-2xl px-5 py-3.5 shadow-sm">
+              <div className="flex items-center gap-2.5 pr-4 border-r border-gray-200">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={12} className="fill-accent text-accent" />
                   ))}
                 </div>
+                <span className="text-xs font-medium text-gray-700">Highly Rated</span>
               </div>
-
-              <div className="bg-primary/5 rounded-xl p-6">
-                <Quote size={28} className="text-primary/40 mb-3" />
-                <blockquote className="text-gray-700 italic">
-                  &ldquo;Dr. Chavez has my highest recommendation. He is
-                  knowledgeable, intelligent, empathic, consistent, thorough and
-                  soft-spoken. Basically, he delivers what most people want and
-                  deserve from their MD.&rdquo;
-                </blockquote>
-                <p className="mt-3 text-sm font-semibold text-primary">
-                  - Chad M.
-                </p>
+              <div>
+                <p className="text-xs font-semibold text-gray-900">Board-Certified FAAFP</p>
+                <p className="text-xs text-gray-500 mt-0.5">Illinois Licensed · Since 1997</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Our Services
-            </h2>
-            <div className="mt-4 h-1 w-20 bg-primary rounded-full mx-auto" />
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              From preventive care to specialized treatments, we provide
-              comprehensive medical services for the whole family.
-            </p>
+      {/* Credential Strip */}
+      <section className="border-y border-gray-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+            {[
+              { icon: Clock, top: "28+", bottom: "Years Experience" },
+              { icon: Star, top: "FAAFP", bottom: "Board Certified" },
+              { icon: Users, top: "Walk-Ins", bottom: "Welcome Daily" },
+              { icon: MapPin, top: "Free", bottom: "On-Site Parking" },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.bottom} className="py-8 px-6 text-center group hover:bg-gray-50/60 transition-colors duration-200">
+                  <div className="flex items-center justify-center mb-3">
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(107,76,154,0.10) 0%, rgba(74,155,127,0.10) 100%)",
+                      }}
+                    >
+                      <Icon size={16} className="text-primary/60 group-hover:text-primary transition-colors duration-200" />
+                    </div>
+                  </div>
+                  <p
+                    className="text-2xl font-light"
+                    style={{
+                      background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {item.top}
+                  </p>
+                  <p className="text-xs tracking-[0.15em] uppercase text-gray-400 mt-1">
+                    {item.bottom}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Services - Horizontal Scroll Cards */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-14">
+            <div>
+              <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
+                What We Treat
+              </p>
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+                Our Specialties
+              </h2>
+            </div>
+            <Link
+              href="/family-medicine"
+              className="hidden md:flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+            >
+              View All Services <ArrowUpRight size={16} />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary/20"
+                  className="group relative"
                 >
-                  <div className="relative h-36 overflow-hidden">
+                  <div className="relative h-64 rounded-2xl overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-                    <div className="absolute bottom-3 left-3 p-2 bg-white/15 backdrop-blur-sm rounded-lg border border-white/20">
-                      <Icon size={20} className="text-white" />
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-base font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="mt-3 flex items-center gap-1 text-primary text-sm font-medium">
-                      Learn more <ArrowRight size={14} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-primary/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Shimmer sweep on hover */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none z-10" />
+                    <span
+                      className="absolute top-3 right-4 text-5xl font-bold leading-none select-none tabular-nums text-white/15 group-hover:text-white/25 transition-colors duration-300"
+                      aria-hidden="true"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon size={16} className="text-white/80" />
+                        <span className="text-xs text-white/60 uppercase tracking-wider">
+                          {service.tagline}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-medium text-white flex items-center gap-2">
+                        {service.title}
+                        <ArrowRight
+                          size={14}
+                          className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                        />
+                      </h3>
                     </div>
                   </div>
                 </Link>
@@ -309,91 +301,248 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet Our Team */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Meet Our Team
-            </h2>
-            <div className="mt-4 h-1 w-20 bg-primary rounded-full mx-auto" />
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              Board-certified physicians and practitioners dedicated to your
-              health and well-being.
+      {/* Mission - Large Pull Quote */}
+      <section
+        className="py-20 md:py-28 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #f5f0fb 0%, #eef8f4 100%)" }}
+      >
+        {/* Top gradient border */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
+        {/* Bottom gradient border */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent pointer-events-none" />
+        {/* Soft glow blobs */}
+        <div className="absolute -left-24 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/8 blur-3xl pointer-events-none" />
+        <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-secondary/8 blur-3xl pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-6 text-center relative">
+          <div
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full mx-auto mb-8"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(107,76,154,0.12) 0%, rgba(74,155,127,0.12) 100%)",
+              border: "1px solid rgba(107,76,154,0.18)",
+              boxShadow: "0 0 32px rgba(107,76,154,0.12)",
+            }}
+          >
+            <Quote size={28} style={{ color: "#6B4C9A" }} />
+          </div>
+          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-800 leading-relaxed italic">
+            &ldquo;We strive to inspire and aid those seeking their optimal
+            health, wellness and healing through efficient service, quality
+            consultations and our core values: integrity and respect.&rdquo;
+          </blockquote>
+          <div
+            className="mt-8 h-px w-24 mx-auto"
+            style={{
+              background: "linear-gradient(90deg, #6B4C9A 0%, #4A9B7F 100%)",
+            }}
+          />
+          <p className="mt-6 text-sm tracking-[0.15em] uppercase text-gray-400">
+            Our Mission
+          </p>
+          <p
+            className="mt-2 text-sm font-medium"
+            style={{
+              background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Dr. Milton Chavez MD, FAAFP
+          </p>
+        </div>
+      </section>
+
+      {/* Team - Large Portrait Layout */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
+              Your Providers
             </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              Meet the Team
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
             {/* Dr. Chavez */}
-            <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-72">
+            <div className="group">
+              <div className="relative rounded-2xl mb-6 ring-1 ring-primary/15 group-hover:ring-2 group-hover:ring-primary/35 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300">
+                <div className="relative h-[28rem] rounded-[14px] overflow-hidden">
                 <Image
                   src="/team/dr-chavez.jpg"
                   alt="Dr. Milton Chavez MD, FAAFP"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Dr. Milton Chavez
-                </h3>
-                <p className="text-primary font-semibold text-sm mt-1">
-                  MD, FAAFP - Medical Director
-                </p>
-                <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                  Board-certified family physician with 28+ years of experience
-                  specializing in family medicine, non-operative orthopedics, and
-                  minor outpatient surgery.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["Family Medicine", "Orthopedics", "Minor Surgery"].map(
-                    (tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium"
-                      >
-                        {tag}
-                      </span>
-                    )
-                  )}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                  <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">MD, FAAFP - Medical Director</p>
+                  <p className="text-white text-sm leading-relaxed">28+ years in family medicine, non-operative orthopedics, and minor outpatient surgery.</p>
+                </div>
                 </div>
               </div>
+              <h3
+                className="text-2xl font-light"
+                style={{
+                  background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Dr. Milton Chavez
+              </h3>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 px-3 py-1.5 rounded-full mt-2">
+                MD, FAAFP - Medical Director
+              </span>
+              <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+                Board-certified family physician with 28+ years of experience
+                specializing in family medicine, non-operative orthopedics, and
+                minor outpatient surgery.
+              </p>
             </div>
 
             {/* Karen Corona */}
-            <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-72">
+            <div className="group">
+              <div className="relative rounded-2xl mb-6 ring-1 ring-secondary/15 group-hover:ring-2 group-hover:ring-secondary/35 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300">
+                <div className="relative h-[28rem] rounded-[14px] overflow-hidden">
                 <Image
                   src="/team/karen-corona.jpg"
                   alt="Karen Corona MSN, APRN, FNP-C"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                  <p className="text-white/70 text-xs font-medium tracking-[0.15em] uppercase mb-2">MSN, APRN, FNP-C - Nurse Practitioner</p>
+                  <p className="text-white text-sm leading-relaxed">Specialized in women&apos;s health, family medicine, inpatient care, and medical weight loss.</p>
+                </div>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Karen Corona
-                </h3>
-                <p className="text-primary font-semibold text-sm mt-1">
-                  MSN, APRN, FNP-C - Family Nurse Practitioner
-                </p>
-                <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                  Board-certified family nurse practitioner with diverse
-                  experience in women&apos;s health, family medicine, inpatient
-                  care, surgical settings, and medical weight loss.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["Women's Health", "Weight Loss", "Family Medicine"].map(
-                    (tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium"
+              <h3
+                className="text-2xl font-light"
+                style={{
+                  background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Karen Corona
+              </h3>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 px-3 py-1.5 rounded-full mt-2">
+                MSN, APRN, FNP-C - Nurse Practitioner
+              </span>
+              <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+                Board-certified family nurse practitioner with diverse experience
+                in women&apos;s health, family medicine, inpatient care, surgical
+                settings, and medical weight loss.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Side by Side */}
+      <section className="py-20 md:py-28 bg-[#faf9f7]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">
+              Patient Stories
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              What They Say
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary pointer-events-none" />
+              <div
+                className="absolute -top-4 left-4 text-[8rem] leading-none text-primary/10 select-none pointer-events-none"
+                style={{ fontFamily: "Georgia, serif" }}
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
+              <div className="relative">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      className="fill-accent text-accent"
+                    />
+                  ))}
+                </div>
+                <blockquote className="text-gray-600 leading-relaxed italic">
+                  &ldquo;My visit with Dr. Chavez is always pleasant. I love that
+                  the Doctors take your appointment on time, very attentive and
+                  professional and knowledgeable of my medical history.&rdquo;
+                </blockquote>
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)" }}
+                    aria-hidden="true"
+                  >
+                    JH
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 text-sm">Janneth H.</p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      via{" "}
+                      <a
+                        href="https://www.tebra.com/care/provider/milton-chavez-md-1700869450"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-primary"
                       >
-                        {tag}
-                      </span>
-                    )
-                  )}
+                        Tebra
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary pointer-events-none" />
+              <div
+                className="absolute -top-4 left-4 text-[8rem] leading-none text-primary/10 select-none pointer-events-none"
+                style={{ fontFamily: "Georgia, serif" }}
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
+              <div className="relative">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      className="fill-accent text-accent"
+                    />
+                  ))}
+                </div>
+                <blockquote className="text-gray-600 leading-relaxed italic">
+                  &ldquo;Dr. Chavez has my highest recommendation. He is
+                  knowledgeable, intelligent, empathic, consistent, thorough and
+                  soft-spoken. Basically, he delivers what most people want and
+                  deserve from their MD.&rdquo;
+                </blockquote>
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)" }}
+                    aria-hidden="true"
+                  >
+                    CM
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 text-sm">Chad M.</p>
+                    <p className="text-xs text-gray-400 mt-0.5">Verified Patient</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -401,153 +550,134 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About / CTA */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="relative h-[28rem] rounded-xl overflow-hidden">
-                <Image
-                  src="/images/hero-stethoscope.jpg"
-                  alt="M. Chavez MD, SC practice"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/60 to-transparent" />
+      {/* Hours + Location - Clean Split */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Hours */}
+            <div
+              className="rounded-2xl p-8 border border-gray-100 relative overflow-hidden"
+              style={{ background: "linear-gradient(145deg, #faf9f7 0%, #f3f0f9 100%)" }}
+            >
+              {/* Subtle top gradient accent */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-transparent pointer-events-none" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock size={18} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-light text-gray-900">
+                  Office Hours
+                </h3>
               </div>
-              <div className="absolute bottom-4 right-4 bg-white rounded-xl p-5 shadow-lg max-w-[180px]">
-                <p className="text-3xl font-bold text-primary">28+</p>
-                <p className="text-sm text-gray-600">
-                  Years in Family Medicine
-                </p>
+              <div className="space-y-2.5">
+                {[
+                  ["Monday", "8:00a - 5:00p"],
+                  ["Tuesday", "8:00a - 6:00p"],
+                  ["Wednesday", "8:00a - 4:00p"],
+                  ["Thursday", "8:00a - 4:00p"],
+                  ["Friday", "8:00a - 4:00p"],
+                  ["Saturday", "8:00a - 12:00p"],
+                ].map(([day, hours]) => (
+                  <div
+                    key={day}
+                    className="flex justify-between text-sm pb-2.5 border-b border-gray-200/60 last:border-0"
+                  >
+                    <span className="text-gray-500">{day}</span>
+                    <span className="text-gray-900 font-medium">{hours}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2.5">
+                <MapPin size={14} className="text-secondary flex-shrink-0" />
+                <span className="text-xs text-gray-400 leading-snug">
+                  Free parking at Western &amp; LeMoyne
+                </span>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Schedule Your Appointment Today
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Whether you are interested in wellness and prevention, have an
-                acute or chronic illness or require procedural services, our goal
-                is always to prevent, maintain and optimize your well-being every
-                step of the way.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Dr. Chavez and each of our clinicians are board certified in
-                Family Medicine. We are located in Wicker Park and we proudly
-                extend our expertise to the surrounding areas of Lincoln Park,
-                Bucktown, Logan Square and the Ukrainian Village.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/schedule"
-                  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Book Appointment
-                  <ArrowRight size={18} />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Location */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Map */}
-            <div className="rounded-xl overflow-hidden shadow-md border border-gray-200 h-80 lg:h-96">
+            <div className="lg:col-span-2 rounded-2xl overflow-hidden h-80 lg:h-auto">
               <iframe
                 src="https://maps.google.com/maps?q=1509+N+Western+Ave+Unit+A+Chicago+IL+60622&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, minHeight: "320px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="M. Chavez MD, SC - 1509 N Western Ave, Chicago, IL"
               />
             </div>
+          </div>
 
-            {/* Location details */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Serving Wicker Park & Surrounding Areas
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Conveniently located at the corner of Western Ave and LeMoyne
-                Ave in Wicker Park, with free parking available.
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-3">
-                  <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-gray-900">1509 N Western Ave, Unit A</p>
-                    <p className="text-gray-600 text-sm">Chicago, IL 60622</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-primary flex-shrink-0" />
-                  <a href="tel:7732273303" className="text-gray-700 hover:text-primary font-medium">
-                    (773) 227-3303
-                  </a>
-                </div>
+          {/* Address + neighborhoods */}
+          <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-10 border-t border-gray-100">
+            <div className="flex items-start gap-3">
+              <MapPin size={18} className="text-primary mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-900">
+                  1509 N Western Ave, Unit A
+                </p>
+                <p className="text-sm text-gray-500">Chicago, IL 60622</p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Wicker Park",
-                  "Lincoln Park",
-                  "Bucktown",
-                  "Logan Square",
-                  "Ukrainian Village",
-                ].map((area) => (
-                  <div
-                    key={area}
-                    className="flex items-center gap-1.5 bg-white rounded-lg py-2 px-4 shadow-sm border border-gray-100 whitespace-nowrap"
-                  >
-                    <MapPin size={12} className="text-primary flex-shrink-0" />
-                    <span className="text-sm font-medium text-gray-700">
-                      {area}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Wicker Park",
+                "Lincoln Park",
+                "Bucktown",
+                "Logan Square",
+                "Ukrainian Village",
+              ].map((area) => (
+                <span
+                  key={area}
+                  className="text-xs px-3 py-1.5 rounded-full border border-gray-200 text-gray-500"
+                >
+                  {area}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pre-Footer CTA */}
-      <section className="bg-gradient-to-r from-accent to-accent-light py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Your Health Is Worth It
+      {/* CTA - Minimal */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-primary-dark via-primary to-secondary relative overflow-hidden">
+        {/* Dot grid - mirrors hero, anchored to right side */}
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255, 255, 255, 0.13) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage:
+              "radial-gradient(ellipse 55% 70% at 82% 50%, black 0%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 55% 70% at 82% 50%, black 0%, transparent 100%)",
+          }}
+        />
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-white/5 pointer-events-none" />
+        <div className="max-w-3xl mx-auto px-6 text-center relative">
+          <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
+            Ready to prioritize your health?
           </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Walk-ins welcome. New patients accepted. Most PPO insurance plans
-            accepted - and cash pay options available too.
+          <p className="text-white/70 text-lg mb-10">
+            Walk-ins welcome. New patients accepted. Most PPO plans accepted.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center gap-2 bg-white text-accent hover:bg-white/90 px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-md"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-full font-medium text-lg transition-colors"
             >
               Schedule Appointment
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </Link>
             <a
               href="tel:7732273303"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:border-white/60 px-8 py-4 rounded-full font-medium text-lg transition-colors"
             >
-              <Phone size={20} />
+              <Phone size={18} />
               (773) 227-3303
             </a>
           </div>
