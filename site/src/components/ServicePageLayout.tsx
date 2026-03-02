@@ -90,11 +90,11 @@ export default function ServicePageLayout({
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex justify-between">
                     <span>Monday</span>
-                    <span>8:00a - 5:00p</span>
+                    <span>8:00a - 4:00p</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Tuesday</span>
-                    <span>8:00a - 6:00p</span>
+                    <span>8:00a - 5:00p</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Wednesday</span>

@@ -569,8 +569,8 @@ export default function Home() {
               </div>
               <div className="space-y-2.5">
                 {[
-                  ["Monday", "8:00a - 5:00p"],
-                  ["Tuesday", "8:00a - 6:00p"],
+                  ["Monday", "8:00a - 4:00p"],
+                  ["Tuesday", "8:00a - 5:00p"],
                   ["Wednesday", "8:00a - 4:00p"],
                   ["Thursday", "8:00a - 4:00p"],
                   ["Friday", "8:00a - 4:00p"],
