@@ -113,7 +113,7 @@ export default function Home() {
                 Wicker Park, Chicago
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight whitespace-nowrap">
               Procedural Medicine.
               <br />
               <span
