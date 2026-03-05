@@ -16,6 +16,7 @@ import {
   Clock,
   Star,
   Quote,
+  CheckCircle2,
 } from "lucide-react";
 
 const services = [
@@ -113,8 +114,8 @@ export default function Home() {
                 Wicker Park, Chicago
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight whitespace-nowrap">
-              Procedural Medicine.
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
+              Family
               <br />
               <span
                 className="font-normal italic"
@@ -126,7 +127,7 @@ export default function Home() {
                   backgroundClip: "text",
                 }}
               >
-                Authentic Care.
+                Medicine.
               </span>
             </h1>
             <p className="mt-8 text-lg text-gray-500 leading-relaxed max-w-md">
@@ -180,6 +181,239 @@ export default function Home() {
               <div>
                 <p className="text-xs font-semibold text-gray-900">Board-Certified FAAFP</p>
                 <p className="text-xs text-gray-500 mt-0.5">Illinois Licensed · Since 1997</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero 2 - Knee Pain & Regenerative Medicine */}
+      <section className="relative min-h-[90vh] flex items-center bg-[#faf9f7] overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(107, 76, 154, 0.14) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage:
+              "radial-gradient(ellipse 55% 70% at 18% 50%, black 0%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 55% 70% at 18% 50%, black 0%, transparent 100%)",
+          }}
+        />
+        <div className="absolute top-0 right-0 w-3/5 h-full hidden lg:block">
+          <Image
+            src="/images/knee-pain.jpg"
+            alt="Knee pain and regenerative medicine - M. Chavez MD"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#faf9f7] via-[#faf9f7]/60 to-transparent" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary">
+                Regenerative Medicine
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 leading-[1.1] tracking-tight">
+              Stop Living
+              <br />
+              With Knee Pain.
+              <br />
+              <span
+                className="font-normal italic"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Heal Naturally.
+              </span>
+            </h2>
+            <p className="mt-8 text-lg text-gray-500 leading-relaxed max-w-md">
+              Board-certified physician with 28+ years of experience in
+              regenerative medicine and knee injections - restoring mobility
+              without surgery.
+            </p>
+            <div className="mt-8 flex flex-col gap-2.5">
+              {[
+                "PRP & regenerative injections",
+                "Joint injections for knee pain",
+                "Osteoarthritis treatment",
+                "Non-surgical approach",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5">
+                  <CheckCircle2
+                    size={16}
+                    className="text-secondary flex-shrink-0"
+                  />
+                  <span className="text-sm text-gray-600">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 flex items-center gap-6">
+              <Link
+                href="/schedule"
+                className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary-dark transition-colors"
+              >
+                Book Appointment
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
+              <a
+                href="tel:7732273303"
+                className="text-gray-500 hover:text-primary transition-colors font-medium"
+              >
+                (773) 227-3303
+              </a>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary bg-secondary/10 px-3 py-1.5 rounded-full">
+                <span className="relative flex w-1.5 h-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75" />
+                  <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-secondary" />
+                </span>
+                Accepting New Patients
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+                Walk-ins Welcome
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
+                PPO, HMO, Medicare & Medicaid
+              </span>
+            </div>
+            <div className="mt-8 hidden lg:inline-flex items-center gap-4 bg-white/80 backdrop-blur-sm border border-gray-200/70 rounded-2xl px-5 py-3.5 shadow-sm">
+              <div className="flex items-center gap-2.5 pr-4 border-r border-gray-200">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={12} className="fill-accent text-accent" />
+                  ))}
+                </div>
+                <span className="text-xs font-medium text-gray-700">Highly Rated</span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-gray-900">Board-Certified FAAFP</p>
+                <p className="text-xs text-gray-500 mt-0.5">Illinois Licensed - Since 1997</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero 3 - Minor Surgery */}
+      <section className="relative min-h-[90vh] flex items-center bg-[#1c1628] overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none select-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage:
+              "radial-gradient(ellipse 55% 70% at 82% 50%, black 0%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 55% 70% at 82% 50%, black 0%, transparent 100%)",
+          }}
+        />
+        <div className="absolute top-0 left-0 w-3/5 h-full hidden lg:block">
+          <Image
+            src="/images/minor-surgery.jpg"
+            alt="Minor surgery procedures - M. Chavez MD"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1c1628]/60 to-[#1c1628]" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-6 py-20 w-full flex lg:justify-end">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-secondary" />
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-secondary">
+                Same-Day Procedures
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight">
+              Minor Surgery.
+              <br />
+              <span
+                className="font-normal italic"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                No Referrals.
+              </span>
+            </h2>
+            <p className="mt-8 text-lg text-white/60 leading-relaxed max-w-md">
+              Board-certified physician performing common outpatient procedures
+              in-office. Most completed in under an hour with no specialist
+              referral required.
+            </p>
+            <div className="mt-8 flex flex-col gap-2.5">
+              {[
+                "Mole & skin tag removal",
+                "Cyst removal and drainage",
+                "Lesion biopsy",
+                "Cryosurgery for skin lesions",
+                "Wound care and management",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5">
+                  <CheckCircle2
+                    size={16}
+                    className="text-secondary flex-shrink-0"
+                  />
+                  <span className="text-sm text-white/70">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 flex items-center gap-6">
+              <Link
+                href="/schedule"
+                className="group inline-flex items-center gap-3 bg-secondary text-white px-8 py-4 rounded-full font-medium hover:bg-secondary/90 transition-colors"
+              >
+                Book Procedure
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
+              <Link
+                href="/minor-surgery"
+                className="text-white/50 hover:text-white transition-colors font-medium text-sm"
+              >
+                Learn more →
+              </Link>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-white/60 border border-white/20 px-3 py-1.5 rounded-full">
+                In-Office Procedures
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-white/60 border border-white/20 px-3 py-1.5 rounded-full">
+                Under 1 Hour
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-white/60 border border-white/20 px-3 py-1.5 rounded-full">
+                No Referral Needed
+              </span>
+            </div>
+            <div className="mt-8 hidden lg:inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-3.5">
+              <div className="flex items-center gap-2.5 pr-4 border-r border-white/20">
+                <Scissors size={16} className="text-secondary" />
+                <span className="text-xs font-medium text-white/70">Minor Surgery</span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-white">Board-Certified Physician</p>
+                <p className="text-xs text-white/50 mt-0.5">28+ Years Experience</p>
               </div>
             </div>
           </div>
