@@ -14,6 +14,7 @@ const services = [
   { name: "Musculoskeletal Pain", href: "/musculoskeletal-pain" },
   { name: "Women's Health", href: "/womens-wellness" },
   { name: "Men's Health", href: "/mens-wellness" },
+  { name: "Weight Loss", href: "/weight-loss" },
 ];
 
 const patients = [

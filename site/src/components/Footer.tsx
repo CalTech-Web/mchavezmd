@@ -128,6 +128,14 @@ export default function Footer() {
                   Men&apos;s Health
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/weight-loss"
+                  className="hover:text-white transition-colors"
+                >
+                  Weight Loss
+                </Link>
+              </li>
             </ul>
           </div>
 
