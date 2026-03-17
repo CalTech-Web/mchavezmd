@@ -161,6 +161,205 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Get to Know Our Providers */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            Get to Know Our Providers
+          </h2>
+          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+            Beyond the white coat - learn a little more about the people
+            dedicated to your health and wellness.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* Dr. Chavez Fun Facts */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">
+                Dr. Chavez
+              </h3>
+              <p className="text-primary font-medium text-sm mb-5">
+                Medical Director
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Why did you become a healthcare provider?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    To have a personal hand in someone&apos;s improvement of
+                    their health.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What is your favorite part about caring for patients?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Watching patients get better on my intervention and thanking
+                    God for their improvement.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What do you enjoy doing outside of work?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Family time, travel, cooking, fine dining, cycling, and
+                    photography.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What is your favorite way to relax after a long day?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Cooking and watching a movie or a TV series.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Something patients might be surprised to learn about you?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    I have a good singing voice outside the shower but
+                    don&apos;t sing.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    How do you stay active?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Cycling, rowing, and weightlifting.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Favorite local spots?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Wicker Park, Oak Park, and the Fulton Market district.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What kind of music do you enjoy?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    I&apos;ve been into indie music lately, mostly from some
+                    groups down under. Boy and Bear come to mind.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    A personal goal you&apos;re working toward?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Growing the Med Spa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Karen Corona Fun Facts */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">
+                Karen Corona
+              </h3>
+              <p className="text-primary font-medium text-sm mb-5">
+                Family Nurse Practitioner
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Why did you become a healthcare provider?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    I truly enjoy interacting with people and helping them
+                    achieve positive health outcomes. Being able to build
+                    relationships with patients and support them in improving
+                    their health is very meaningful to me.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What is your favorite part about caring for patients?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Connecting with patients and helping them feel heard while
+                    working together to find solutions that improve their health
+                    and quality of life.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What do you enjoy doing outside of work?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Running, exploring new restaurants around Chicago, and
+                    spending time with my fianc&eacute; and our beagle.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What is your favorite way to relax after a long day?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Going for a run, taking my beagle for a walk, or enjoying a
+                    good meal with my fianc&eacute;.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Something patients might be surprised to learn about you?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    I&apos;m a Level One sommelier and really enjoy learning
+                    about wine and food pairings.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    How do you stay active?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Running is my favorite way to stay active.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Favorite local spots?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Jefferson Tap for a local feel, Remington&apos;s for a more
+                    upscale meal, and Maple and Ash if we want to go all out.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    What kind of music do you enjoy?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Pop, alternative, and folk music. Frozen is my favorite
+                    movie, and Parks and Rec is the show I can rewatch several
+                    times.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    A personal goal you&apos;re working toward?
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Preparing for my wedding this year.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

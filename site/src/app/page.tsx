@@ -9,6 +9,7 @@ import {
   Scissors,
   Activity,
   Users,
+  Scale,
   ArrowRight,
   ArrowUpRight,
   Phone,
@@ -75,6 +76,13 @@ const services = [
     icon: Users,
     image: "/images/hero-stethoscope.jpg",
     tagline: "Tailored men's wellness",
+  },
+  {
+    title: "Weight Loss",
+    href: "/weight-loss",
+    icon: Scale,
+    image: "/images/immediate-care.jpg",
+    tagline: "Physician-supervised programs",
   },
 ];
 
@@ -268,12 +276,12 @@ export default function Home() {
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </Link>
-              <a
-                href="tel:7732273303"
-                className="text-gray-500 hover:text-primary transition-colors font-medium"
+              <Link
+                href="/knee-pain"
+                className="text-gray-500 hover:text-primary transition-colors font-medium text-sm"
               >
-                (773) 227-3303
-              </a>
+                Learn more →
+              </Link>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 text-xs font-medium text-secondary bg-secondary/10 px-3 py-1.5 rounded-full">
