@@ -11,7 +11,7 @@ export default function WeightLossPage() {
   return (
     <ServicePageLayout
       title="Medical Weight Loss"
-      image="/images/immediate-care.jpg"
+      image="https://images.pexels.com/photos/7991936/pexels-photo-7991936.jpeg"
       imageAlt="Medical weight loss consultation"
     >
       <p className="text-lg text-gray-600 mb-6">
