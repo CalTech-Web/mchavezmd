@@ -11,9 +11,6 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  verification: {
-    google: "_4Y5tpAoiPY2zzJQcvTqqz2MZPzVKVC0uJYiFwe1H9k",
-  },
   title: {
     default: "M. Chavez MD, SC | Family Medicine in Wicker Park, Chicago",
     template: "%s | M. Chavez MD, SC",
