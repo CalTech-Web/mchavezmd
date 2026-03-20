@@ -153,6 +153,34 @@ export default function AboutPage() {
                 explains diagnoses, and how he partners with patients to build
                 plans they will actually follow.
               </p>
+              <figure className="my-2 rounded-2xl bg-white border border-primary/10 shadow-sm px-8 py-7 relative overflow-hidden">
+                <div
+                  className="absolute top-0 left-0 w-1 h-full rounded-l-2xl"
+                  style={{ background: "linear-gradient(180deg, #6B4C9A 0%, #4A9B7F 100%)" }}
+                />
+                <span
+                  className="absolute -top-2 right-6 text-[7rem] leading-none select-none text-primary/8 font-serif"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="relative">
+                  <p className="text-lg italic text-gray-700 leading-relaxed">
+                    My goal has always been to have a personal hand in
+                    someone&apos;s improvement. When I watch a patient walk out
+                    better than they walked in, and I know that what we did
+                    together made that possible, that&apos;s everything. That is
+                    why I do this.
+                  </p>
+                  <footer className="mt-5 flex items-center gap-3">
+                    <div className="h-px w-8 bg-primary/40" />
+                    <cite className="not-italic text-sm font-semibold text-primary">
+                      Dr. Milton Chavez, MD, FAAFP
+                    </cite>
+                  </footer>
+                </blockquote>
+              </figure>
+
               <p>
                 His clinical range is deliberate. Over nearly three decades, Dr.
                 Chavez built expertise not only in primary care but in
@@ -234,6 +262,33 @@ export default function AboutPage() {
                 patient&apos;s life, not just their labs, is what defines her
                 care.
               </p>
+              <figure className="my-2 rounded-2xl bg-white border border-secondary/10 shadow-sm px-8 py-7 relative overflow-hidden">
+                <div
+                  className="absolute top-0 left-0 w-1 h-full rounded-l-2xl"
+                  style={{ background: "linear-gradient(180deg, #4A9B7F 0%, #6B4C9A 100%)" }}
+                />
+                <span
+                  className="absolute -top-2 right-6 text-[7rem] leading-none select-none text-secondary/8 font-serif"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="relative">
+                  <p className="text-lg italic text-gray-700 leading-relaxed">
+                    I want every patient to leave feeling heard, not just with
+                    a diagnosis but with a plan they actually believe in. That
+                    relationship, built on trust and honest conversation, is what
+                    makes this work meaningful to me.
+                  </p>
+                  <footer className="mt-5 flex items-center gap-3">
+                    <div className="h-px w-8 bg-secondary/40" />
+                    <cite className="not-italic text-sm font-semibold text-secondary">
+                      Karen Corona, MSN, APRN, FNP-C
+                    </cite>
+                  </footer>
+                </blockquote>
+              </figure>
+
               <p>
                 Her clinical interests are broad, which is fitting for a practice
                 that treats the whole family. She has particular depth in
