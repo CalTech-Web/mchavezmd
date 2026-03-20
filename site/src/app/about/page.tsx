@@ -29,31 +29,33 @@ export default function AboutPage() {
                 Our Practice
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Dr. Milton Chavez MD, SC is a family medicine practice located in
-                Wicker Park, Chicago, that specializes in procedural medicine and
-                preventive health. Under the medical direction of board-certified
-                family medicine physician, Dr. Chavez, the team is focused on
-                inspiring patients to achieve optimal health, wellness, and
-                healing through efficient service and high-quality consultations.
+                M. Chavez MD, SC is a family medicine practice in Wicker Park,
+                Chicago, built around a simple conviction: patients deserve a
+                physician who treats the whole person, not just the presenting
+                complaint. Under the medical direction of Dr. Milton Chavez, the
+                practice specializes in procedural medicine and preventive health,
+                with a team focused on helping each patient achieve their optimal
+                health, wellness, and healing.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                From prevention to wellness to management of acute and chronic
-                health issues, the team at M. Chavez MD, SC provides the
-                exceptional care needed to meet each patient&apos;s needs. In
-                addition to primary care services for the management of
-                men&apos;s and women&apos;s health, the full-service practice
-                also provides specialized care for many common health concerns,
-                including acne, neck pain and back pain, and neuropathy.
+                From annual physicals and chronic disease management to in-office
+                surgical procedures, regenerative medicine, and medical weight
+                loss, the scope of care at M. Chavez MD is intentionally broad.
+                That breadth exists so that patients can get more of what they
+                need in one place, with providers who know their history and
+                actually remember them appointment to appointment.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Dr. Chavez and his team view themselves as patient advocates and
-                guides, providing patients with all the available treatment
-                options, and then working together to devise a plan that achieves
-                optimal health and wellness.
+                Dr. Chavez and Karen Corona, FNP-C approach every patient as an
+                individual. Treatment plans are built collaboratively, with all
+                available options explained clearly, and with the patient&apos;s
+                goals, not just their symptoms, at the center of the conversation.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                For compassionate care from a team that values integrity and
-                respect, contact M. Chavez MD, SC, by phone or online today.
+                The practice is anchored in the values Dr. Chavez has carried
+                through 28 years of medicine: integrity and respect. Those values
+                shape how every appointment is run, how every question is
+                answered, and how every patient is sent home.
               </p>
             </div>
 
@@ -94,268 +96,164 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Staff */}
+      {/* Provider Bios */}
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Our Staff
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            Meet Our Providers
           </h2>
+          <p className="text-gray-500 text-center mb-16 max-w-2xl mx-auto">
+            The physicians and practitioners behind your care.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Dr. Chavez */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <div className="relative h-80">
+          {/* Dr. Chavez */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-20 items-start">
+            <div className="lg:col-span-2">
+              <div className="relative h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-sm">
                 <Image
                   src="/team/dr-chavez.jpg"
                   alt="Dr. Milton Chavez MD, FAAFP"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Dr. Chavez MD, FAAFP
+              <div className="mt-5">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Dr. Milton Chavez
                 </h3>
-                <p className="text-primary font-medium text-sm mb-3">
-                  Medical Director
+                <p className="text-primary font-medium text-sm mt-1">
+                  MD, FAAFP &mdash; Medical Director
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Over 28 years of experience in Family Medicine, Dr. Chavez
-                  specializes in family medicine, non-operative orthopedics and
-                  minor outpatient surgery. His mission is to inspire those
-                  seeking their optimal health, wellness, and healing through
-                  efficient service, quality consultations, and his core values:
-                  integrity and respect.
-                </p>
+                <div className="mt-4 space-y-1 text-sm text-gray-500">
+                  <p>Board-Certified Family Physician</p>
+                  <p>Fellow, American Academy of Family Physicians</p>
+                  <p>Illinois Licensed Since 1997</p>
+                  <p>28+ Years in Family Medicine</p>
+                </div>
               </div>
             </div>
 
-            {/* Karen Corona */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <div className="relative h-80">
+            <div className="lg:col-span-3 space-y-5 text-gray-600 leading-relaxed">
+              <p>
+                Dr. Milton Chavez became a physician for a specific reason: he
+                wanted a direct, personal hand in someone&apos;s improvement.
+                Not a referral chain. Not a handoff. He wanted to be the person
+                who actually made the difference a patient could feel. That
+                conviction has shaped the way he practices for more than 28
+                years, and it is still the lens through which he evaluates every
+                patient who walks through the door.
+              </p>
+              <p>
+                What he describes as his favorite part of the job is watching
+                a patient get better and knowing that his intervention was the
+                reason. There is a quiet gratitude in that, one that Dr. Chavez
+                does not take lightly. Medicine, for him, is not simply a career.
+                It is a calling grounded in his core values of integrity and
+                respect, values that shape how he runs appointments, how he
+                explains diagnoses, and how he partners with patients to build
+                plans they will actually follow.
+              </p>
+              <p>
+                His clinical range is deliberate. Over nearly three decades, Dr.
+                Chavez built expertise not only in primary care but in
+                non-operative orthopedics, regenerative medicine, and minor
+                outpatient surgery, because he saw the gaps patients fall into
+                when a family physician has to send every complex case somewhere
+                else. His goal has always been to keep patients out of that gap,
+                to be the provider who can evaluate a knee, perform an in-office
+                procedure, supervise a weight loss program, and manage the same
+                patient&apos;s hypertension, all within a practice that knows
+                their name.
+              </p>
+              <p>
+                Outside the clinic, Dr. Chavez stays active through cycling,
+                rowing, and weightlifting. He is a genuinely skilled home cook
+                who unwinds in the kitchen most evenings, followed by a movie or
+                a series. He has been deep into indie music lately, particularly
+                Australian acts, with Boy and Bear getting regular rotation. He
+                knows Wicker Park, Oak Park, and the Fulton Market district the
+                way a person knows their own neighborhood, because they are. He
+                is deeply invested in the community his practice serves.
+              </p>
+              <p>
+                Patients who know him well eventually learn that he has, by his
+                own cheerful admission, a perfectly respectable singing voice that
+                he keeps almost entirely to himself. He considers the restraint a
+                reasonable exercise in good judgment.
+              </p>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-200 mb-20" />
+
+          {/* Karen Corona */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            <div className="lg:col-span-2 lg:order-last">
+              <div className="relative h-96 lg:h-[480px] rounded-2xl overflow-hidden shadow-sm">
                 <Image
                   src="/team/karen-corona.jpg"
                   alt="Karen Corona MSN, APRN, FNP-C"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">
-                  Karen Corona MSN, APRN, FNP-C
+              <div className="mt-5">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Karen Corona
                 </h3>
-                <p className="text-primary font-medium text-sm mb-3">
-                  Family Nurse Practitioner
+                <p className="text-primary font-medium text-sm mt-1">
+                  MSN, APRN, FNP-C &mdash; Family Nurse Practitioner
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Karen Corona is a board-certified Family Nurse Practitioner
-                  with over five years of diverse healthcare experience. Her
-                  clinical background spans women&apos;s health, family medicine,
-                  inpatient care, surgical settings, and medical weight loss. She
-                  is dedicated to delivering evidence-based, compassionate care
-                  while fostering strong, collaborative relationships with her
-                  patients.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Get to Know Our Providers */}
-      <section className="py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-            Get to Know Our Providers
-          </h2>
-          <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
-            Beyond the white coat - learn a little more about the people
-            dedicated to your health and wellness.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Dr. Chavez Fun Facts */}
-            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
-                Dr. Chavez
-              </h3>
-              <p className="text-primary font-medium text-sm mb-5">
-                Medical Director
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Why did you become a healthcare provider?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    To have a personal hand in someone&apos;s improvement of
-                    their health.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What is your favorite part about caring for patients?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Watching patients get better on my intervention and thanking
-                    God for their improvement.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What do you enjoy doing outside of work?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Family time, travel, cooking, fine dining, cycling, and
-                    photography.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What is your favorite way to relax after a long day?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Cooking and watching a movie or a TV series.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Something patients might be surprised to learn about you?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    I have a good singing voice outside the shower but
-                    don&apos;t sing.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    How do you stay active?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Cycling, rowing, and weightlifting.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Favorite local spots?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Wicker Park, Oak Park, and the Fulton Market district.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What kind of music do you enjoy?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    I&apos;ve been into indie music lately, mostly from some
-                    groups down under. Boy and Bear come to mind.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    A personal goal you&apos;re working toward?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Growing the Med Spa.
-                  </p>
+                <div className="mt-4 space-y-1 text-sm text-gray-500">
+                  <p>Board-Certified Family Nurse Practitioner</p>
+                  <p>5+ Years Diverse Clinical Experience</p>
+                  <p>Women&apos;s Health, Family Medicine, Medical Weight Loss</p>
                 </div>
               </div>
             </div>
 
-            {/* Karen Corona Fun Facts */}
-            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
-                Karen Corona
-              </h3>
-              <p className="text-primary font-medium text-sm mb-5">
-                Family Nurse Practitioner
+            <div className="lg:col-span-3 space-y-5 text-gray-600 leading-relaxed">
+              <p>
+                Karen Corona became a healthcare provider because she genuinely
+                enjoys people, not as an abstraction but in the real, daily sense
+                of sitting across from someone, listening carefully, and helping
+                them get somewhere better than where they started. After more than
+                five years of clinical experience spanning women&apos;s health,
+                family medicine, inpatient care, surgical settings, and medical
+                weight loss, that instinct has only become more refined. She
+                knows how to meet patients where they are.
               </p>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Why did you become a healthcare provider?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    I truly enjoy interacting with people and helping them
-                    achieve positive health outcomes. Being able to build
-                    relationships with patients and support them in improving
-                    their health is very meaningful to me.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What is your favorite part about caring for patients?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Connecting with patients and helping them feel heard while
-                    working together to find solutions that improve their health
-                    and quality of life.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What do you enjoy doing outside of work?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Running, exploring new restaurants around Chicago, and
-                    spending time with my fianc&eacute; and our beagle.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What is your favorite way to relax after a long day?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Going for a run, taking my beagle for a walk, or enjoying a
-                    good meal with my fianc&eacute;.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Something patients might be surprised to learn about you?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    I&apos;m a Level One sommelier and really enjoy learning
-                    about wine and food pairings.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    How do you stay active?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Running is my favorite way to stay active.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Favorite local spots?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Jefferson Tap for a local feel, Remington&apos;s for a more
-                    upscale meal, and Maple and Ash if we want to go all out.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    What kind of music do you enjoy?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Pop, alternative, and folk music. Frozen is my favorite
-                    movie, and Parks and Rec is the show I can rewatch several
-                    times.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">
-                    A personal goal you&apos;re working toward?
-                  </p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Preparing for my wedding this year.
-                  </p>
-                </div>
-              </div>
+              <p>
+                What Karen values most in her work is the relationship. She wants
+                patients to leave an appointment feeling heard and equipped, not
+                just with a diagnosis but with a plan they understand and believe
+                in. Her approach is collaborative by nature. She asks more
+                questions than she gives answers, because she has found that the
+                right solution almost always comes out of a genuine conversation
+                rather than a checklist. That attention to the full picture of a
+                patient&apos;s life, not just their labs, is what defines her
+                care.
+              </p>
+              <p>
+                Her clinical interests are broad, which is fitting for a practice
+                that treats the whole family. She has particular depth in
+                women&apos;s health and medical weight loss, areas where she
+                brings both clinical expertise and the kind of straightforward,
+                non-judgmental communication that patients often say they have
+                not found elsewhere.
+              </p>
+              <p>
+                Outside the clinic, Karen runs, which she will tell you is both
+                her favorite way to stay active and her most reliable stress
+                management strategy. She is a Level One sommelier, and she and
+                her fianc&eacute; explore Chicago&apos;s restaurant scene with
+                real enthusiasm. Jefferson Tap for a neighborhood feel,
+                Remington&apos;s for something a step up, and Maple and Ash when
+                the occasion calls for it. She is also fully committed to the
+                opinion that Parks and Recreation is the most rewatchable
+                television series ever made, a position she will defend at length
+                if given the opportunity.
+              </p>
             </div>
           </div>
         </div>
