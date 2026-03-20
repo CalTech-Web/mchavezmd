@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -49,13 +49,13 @@ export default function Footer() {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://www.linkedin.com/pub/milton-c-chavez-md/7/44b/89b"
+                href="https://www.instagram.com/mchavezmdsc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-lg hover:bg-primary transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
               >
-                <Linkedin size={18} />
+                <Instagram size={18} />
               </a>
             </div>
           </div>

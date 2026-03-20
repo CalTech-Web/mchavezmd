@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function WomensWellnessPage() {
   return (
-    <ServicePageLayout title="Women's Health">
+    <ServicePageLayout title="Women's Health" image="/images/womens-health.jpg" imageAlt="Women's health consultation">
       <p className="text-lg text-gray-600 mb-6">
         M. Chavez MD, SC acknowledges the varied and unique healthcare needs of
         women. We offer comprehensive care throughout a woman&apos;s journey from

@@ -105,7 +105,7 @@ export default function SchedulePage() {
 
             {/* Telehealth */}
             <a
-              href="https://drchavez.doxy.me/drmiltchavez"
+              href="https://drchavez.doxy.me/drmchavez"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white border-2 border-gray-200 hover:border-secondary rounded-xl p-8 text-center transition-all hover:shadow-lg"

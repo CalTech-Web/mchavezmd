@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function MensWellnessPage() {
   return (
-    <ServicePageLayout title="Men's Health">
+    <ServicePageLayout title="Men's Health" image="/images/mens-health.jpg" imageAlt="Men's health consultation">
       <p className="text-lg text-gray-600 mb-6">
         Most agree that Men&apos;s Health refers to both the physical and mental
         problems common to and of concern to men. At M. Chavez MD, SC, we
