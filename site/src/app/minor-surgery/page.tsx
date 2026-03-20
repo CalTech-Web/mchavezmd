@@ -5,7 +5,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Minor Surgery",
   description:
-    "Same-day minor surgical procedures in Wicker Park, Chicago. Dr. Chavez offers mole removal, skin tag removal, cyst removal, and more with no referrals required.",
+    "Same-day minor surgical procedures in Wicker Park, Chicago. Dr. Chavez offers mole removal, skin tag removal, cyst removal, skin cancer evaluation, and more with no referrals required.",
 };
 
 export default function MinorSurgeryPage() {
@@ -87,6 +87,53 @@ export default function MinorSurgeryPage() {
         ].map((item) => (
           <li key={item.procedure} className="flex items-start gap-3">
             <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+            <span className="text-gray-600">
+              <strong className="text-gray-900">{item.procedure}:</strong>{" "}
+              {item.detail}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        Skin Cancer: Evaluation and Treatment Without the Wait
+      </h2>
+      <p className="text-gray-600 mb-4">
+        A suspicious spot should not sit on a waiting list for months. Skin
+        cancer is among the most treatable cancers when caught early, and delays
+        in evaluation change that calculus significantly. At M. Chavez MD, SC,
+        Dr. Chavez can evaluate, biopsy, and in many cases treat skin cancer
+        concerns in-office, saving patients the time and hassle of waiting for a
+        specialist who may be booked weeks out.
+      </p>
+      <p className="text-gray-600 mb-4">
+        Many cases of squamous cell carcinoma and basal cell carcinoma can be
+        managed and treated directly in the office. For patients concerned about
+        malignant melanoma, Dr. Chavez performs a thorough skin survey and biopsy
+        as needed to reach a diagnosis quickly. From first appointment to
+        resolution, the goal is a clear, fast path forward, often without a
+        referral ever being necessary.
+      </p>
+      <ul className="space-y-3 mb-8">
+        {[
+          {
+            procedure: "Squamous Cell Carcinoma",
+            detail:
+              "Evaluation and in-office excision for many presentations of squamous cell carcinoma, with pathology confirmation.",
+          },
+          {
+            procedure: "Basal Cell Carcinoma",
+            detail:
+              "Assessment and treatment of basal cell lesions in-office, avoiding specialist waitlists for the majority of cases.",
+          },
+          {
+            procedure: "Malignant Melanoma Screening",
+            detail:
+              "Full skin survey with biopsy of concerning lesions. Rapid pathology turnaround and clear follow-up plan to resolution.",
+          },
+        ].map((item) => (
+          <li key={item.procedure} className="flex items-start gap-3">
+            <span className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
             <span className="text-gray-600">
               <strong className="text-gray-900">{item.procedure}:</strong>{" "}
               {item.detail}
