@@ -74,7 +74,7 @@ const services = [
     title: "Men's Health",
     href: "/mens-wellness",
     icon: Users,
-    image: "/images/mens-health.jpg",
+    image: "https://images.unsplash.com/photo-1758691463165-ca9b5bc2b28a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tagline: "Tailored men's wellness",
   },
   {
