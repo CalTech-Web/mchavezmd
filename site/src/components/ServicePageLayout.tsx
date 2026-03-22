@@ -43,6 +43,36 @@ export default function ServicePageLayout({
                 </div>
               )}
               <div className="prose prose-lg max-w-none">{children}</div>
+
+              {/* Bottom CTA */}
+              <div className="mt-12 rounded-2xl p-8 md:p-10 text-white relative overflow-hidden" style={{ background: "linear-gradient(135deg, #6B4C9A 0%, #4A9B7F 100%)" }}>
+                <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-white/10 pointer-events-none" />
+                <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-white/10 pointer-events-none" />
+                <div className="relative">
+                  <h3 className="text-2xl font-bold mb-3">
+                    Take the Next Step
+                  </h3>
+                  <p className="text-white/80 mb-6">
+                    Ready to get started? Schedule an appointment with our team today, or call us to learn more about how we can help.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link
+                      href="/schedule"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <Calendar size={18} />
+                      Book Appointment
+                    </Link>
+                    <a
+                      href="tel:7732273303"
+                      className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-lg hover:border-white/60 transition-colors"
+                    >
+                      <Phone size={16} />
+                      (773) 227-3303
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Sidebar */}
