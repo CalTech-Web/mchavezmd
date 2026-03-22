@@ -114,7 +114,7 @@ export default function ContactPage() {
                   convenience.
                 </p>
                 <a
-                  href="https://drchavez.doxy.me/drmiltchavez"
+                  href="https://drchavez.doxy.me/drmchavez"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-secondary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-secondary-light transition-colors"

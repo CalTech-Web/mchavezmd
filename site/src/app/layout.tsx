@@ -75,7 +75,7 @@ const jsonLd = {
   medicalSpecialty: "Family Medicine",
   sameAs: [
     "https://www.facebook.com/mchavezmdsc",
-    "https://www.linkedin.com/pub/milton-c-chavez-md/7/44b/89b",
+    "https://www.instagram.com/mchavezmdsc",
   ],
   founder: {
     "@type": "Physician",
