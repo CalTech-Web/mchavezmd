@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "What are the clinic hours?",
     answer:
-      "We are open 8 am to 4 pm on Wednesdays, Thursdays and Fridays and from 8 am to 5 pm on Mondays and Tuesdays. We are open on the first and third Saturdays each month from 8 am to noon.",
+      "We are open 8:00 am to 4:00 pm on Mondays, Wednesdays, Thursdays and Fridays. 8:00 am to 5:00 pm on Tuesdays. We are open on the first four Saturdays each month from 8:00 am to noon.",
   },
   {
     question: "Do you accept walk-ins?",
@@ -73,6 +73,12 @@ const faqs = [
     question: "Can I reach the provider after hours?",
     answer:
       "After hours, we have an answering service where patients can leave a non-urgent message. This service is monitored daily, and our staff will call you back within a 24-hour period. If you are experiencing a life-threatening emergency, please call 911.",
+  },
+  {
+    question:
+      "How long does prior authorization for medications or referrals take, and what happens if it's denied?",
+    answer:
+      "If your insurance requires prior authorization for a medication or referral, please allow 7 to 10 business days for our office to process and submit the request. Once submitted, the insurance company may take an additional 14 to 20 business days to review and provide a determination, depending on your specific plan. If the request is denied or not covered by your insurance, we may file an appeal on your behalf. Please be aware that the appeal process can take 30 to 45 business days, and approval is not guaranteed.",
   },
 ];
 

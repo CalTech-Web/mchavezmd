@@ -178,7 +178,7 @@ Yes. Please call to schedule an appointment.
 Yes. We have a free parking lot at the corner of Western and LeMoyne, just south of the building.
 
 **Q: What are the clinic hours?**
-We are open 8 am to 4 pm on Wednesdays, Thursdays and Fridays and from 8 am to 5 pm on Mondays and Tuesdays. We are open on the first and third Saturdays each month from 8 am to noon.
+We are open 8:00 am to 4:00 pm on Mondays, Wednesdays, Thursdays and Fridays. 8:00 am to 5:00 pm on Tuesdays. We are open on the first four Saturdays each month from 8:00 am to noon.
 
 **Q: Do you accept walk-ins?**
 Yes. Though there may be an unspecified wait time, we will work hard to minimize any wait times on a walk-in.
