@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { RefreshCw } from "lucide-react";
 
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
 
-interface MathChallenge {
-  question: string;
-  token: string;
+function generateMathChallenge() {
+  const a = Math.floor(Math.random() * 10) + 1;
+  const b = Math.floor(Math.random() * 10) + 1;
+  return { question: `${a} + ${b} =`, answer: a + b };
 }
 
 export default function ContactForm() {
@@ -19,9 +20,10 @@ export default function ContactForm() {
     message: "",
   });
   const [honeypot, setHoneypot] = useState("");
-  const [mathChallenge, setMathChallenge] = useState<MathChallenge | null>(
-    null
-  );
+  const [mathChallenge, setMathChallenge] = useState<{
+    question: string;
+    answer: number;
+  } | null>(null);
   const [mathAnswer, setMathAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -43,23 +45,15 @@ export default function ContactForm() {
     document.head.appendChild(script);
   }, []);
 
-  // Fetch math challenge
-  const fetchChallenge = useCallback(async () => {
-    try {
-      const res = await fetch("https://forms.caltechweb.com/api/challenge");
-      if (res.ok) {
-        const data = await res.json();
-        setMathChallenge(data);
-        setMathAnswer("");
-      }
-    } catch {
-      // Math challenge is optional - form still works without it
-    }
+  // Generate math challenge on mount
+  useEffect(() => {
+    setMathChallenge(generateMathChallenge());
   }, []);
 
-  useEffect(() => {
-    fetchChallenge();
-  }, [fetchChallenge]);
+  const refreshChallenge = () => {
+    setMathChallenge(generateMathChallenge());
+    setMathAnswer("");
+  };
 
   const getRecaptchaToken = async (): Promise<string> => {
     try {
@@ -90,6 +84,23 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
+    // Honeypot check
+    if (honeypot) {
+      setSubmitted(true);
+      return;
+    }
+
+    // Math challenge check
+    if (
+      !mathChallenge ||
+      parseInt(mathAnswer.trim(), 10) !== mathChallenge.answer
+    ) {
+      setError("Incorrect answer. Please try again.");
+      refreshChallenge();
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -110,15 +121,14 @@ export default function ContactForm() {
             .join("\n"),
           source: "contact-page",
           recaptchaToken,
-          honeypot,
-          mathToken: mathChallenge?.token ?? "",
-          mathAnswer: mathAnswer.trim(),
         }),
       });
 
       if (!res.ok) {
         const data = await res.json().catch(() => null);
-        throw new Error(data?.error || "Something went wrong. Please try again.");
+        throw new Error(
+          data?.error || "Something went wrong. Please try again."
+        );
       }
 
       setSubmitted(true);
@@ -147,7 +157,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="relative space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -222,7 +232,10 @@ export default function ContactForm() {
       </div>
 
       {/* Honeypot - hidden from real users */}
-      <div className="absolute opacity-0 -z-10" aria-hidden="true">
+      <div
+        className="overflow-hidden h-0 w-0 absolute -left-[9999px]"
+        aria-hidden="true"
+      >
         <label htmlFor="website">Website</label>
         <input
           type="text"
@@ -256,7 +269,7 @@ export default function ContactForm() {
             />
             <button
               type="button"
-              onClick={fetchChallenge}
+              onClick={refreshChallenge}
               className="p-2 text-gray-400 hover:text-primary transition-colors"
               title="New question"
             >
