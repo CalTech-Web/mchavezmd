@@ -10,7 +10,6 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
-  const [honeypot, setHoneypot] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,12 +17,6 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
-    // Honeypot check
-    if (honeypot) {
-      setSubmitted(true);
-      return;
-    }
 
     setLoading(true);
 
@@ -150,23 +143,6 @@ export default function ContactForm() {
             setFormData({ ...formData, message: e.target.value })
           }
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none"
-        />
-      </div>
-
-      {/* Honeypot - hidden from real users */}
-      <div
-        className="overflow-hidden h-0 w-0 absolute -left-[9999px]"
-        aria-hidden="true"
-      >
-        <label htmlFor="website">Website</label>
-        <input
-          type="text"
-          id="website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
         />
       </div>
 

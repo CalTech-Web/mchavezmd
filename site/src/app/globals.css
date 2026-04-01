@@ -40,8 +40,3 @@ html {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
-/* Hide reCAPTCHA v3 badge - attribution is in the footer */
-.grecaptcha-badge {
-  visibility: hidden !important;
-}
