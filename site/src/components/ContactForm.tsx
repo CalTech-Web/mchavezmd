@@ -121,6 +121,7 @@ export default function ContactForm() {
             .join("\n"),
           source: "contact-page",
           recaptchaToken,
+          turnstileToken: document.querySelector<HTMLInputElement>("[name=cf-turnstile-response]")?.value || "",
         }),
       });
 
@@ -284,6 +285,8 @@ export default function ContactForm() {
           {error}
         </div>
       )}
+
+      <div className="cf-turnstile" data-sitekey="0x4AAAAAACyywfP780Xo4he2"></div>
 
       <button
         type="submit"
