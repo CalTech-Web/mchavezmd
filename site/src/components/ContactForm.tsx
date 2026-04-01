@@ -1,6 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { RefreshCw } from "lucide-react";
+
+const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
+
+interface MathChallenge {
+  question: string;
+  token: string;
+}
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,11 +18,119 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [mathChallenge, setMathChallenge] = useState<MathChallenge | null>(
+    null
+  );
+  const [mathAnswer, setMathAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const recaptchaReady = useRef(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    if (document.querySelector('script[src*="recaptcha/api.js"]')) {
+      recaptchaReady.current = true;
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${SITE_KEY}`;
+    script.async = true;
+    script.onload = () => {
+      recaptchaReady.current = true;
+    };
+    document.head.appendChild(script);
+  }, []);
+
+  // Fetch math challenge
+  const fetchChallenge = useCallback(async () => {
+    try {
+      const res = await fetch("https://forms.caltechweb.com/api/challenge");
+      if (res.ok) {
+        const data = await res.json();
+        setMathChallenge(data);
+        setMathAnswer("");
+      }
+    } catch {
+      // Math challenge is optional - form still works without it
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchChallenge();
+  }, [fetchChallenge]);
+
+  const getRecaptchaToken = async (): Promise<string> => {
+    try {
+      const w = window as unknown as {
+        grecaptcha?: {
+          ready: (cb: () => void) => void;
+          execute: (key: string, opts: { action: string }) => Promise<string>;
+        };
+      };
+      if (!w.grecaptcha) return "";
+      return await new Promise((resolve) => {
+        w.grecaptcha!.ready(async () => {
+          try {
+            const token = await w.grecaptcha!.execute(SITE_KEY, {
+              action: "contact",
+            });
+            resolve(token);
+          } catch {
+            resolve("");
+          }
+        });
+      });
+    } catch {
+      return "";
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setLoading(true);
+
+    try {
+      const recaptchaToken = await getRecaptchaToken();
+
+      const res = await fetch("https://forms.caltechweb.com/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          site: "mchavezmd.com",
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email.trim(),
+          message: [
+            formData.phone && `Phone: ${formData.phone}`,
+            formData.message,
+          ]
+            .filter(Boolean)
+            .join("\n"),
+          source: "contact-page",
+          recaptchaToken,
+          honeypot,
+          mathToken: mathChallenge?.token ?? "",
+          mathAnswer: mathAnswer.trim(),
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -104,11 +220,64 @@ export default function ContactForm() {
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none"
         />
       </div>
+
+      {/* Honeypot - hidden from real users */}
+      <div className="absolute opacity-0 -z-10" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
+      {/* Math Challenge */}
+      {mathChallenge && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Security Check <span className="text-red-500">*</span>
+          </label>
+          <div className="flex items-center gap-3">
+            <span className="text-gray-800 font-medium whitespace-nowrap">
+              {mathChallenge.question}
+            </span>
+            <input
+              type="text"
+              inputMode="numeric"
+              required
+              value={mathAnswer}
+              onChange={(e) => setMathAnswer(e.target.value)}
+              className="w-24 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors"
+              placeholder="?"
+            />
+            <button
+              type="button"
+              onClick={fetchChallenge}
+              className="p-2 text-gray-400 hover:text-primary transition-colors"
+              title="New question"
+            >
+              <RefreshCw size={18} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-red-700 text-sm">
+          {error}
+        </div>
+      )}
+
       <button
         type="submit"
-        className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+        disabled={loading}
+        className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Submit
+        {loading ? "Sending..." : "Submit"}
       </button>
     </form>
   );

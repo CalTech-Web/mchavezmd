@@ -246,8 +246,31 @@ export default function Footer() {
 
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
-          &copy; 2014-{new Date().getFullYear()} M. Chavez MD, SC. All Rights
-          Reserved.
+          <p>
+            &copy; 2014-{new Date().getFullYear()} M. Chavez MD, SC. All Rights
+            Reserved.
+          </p>
+          <p className="mt-2 text-xs text-gray-600">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-400"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-400"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </p>
         </div>
       </div>
     </footer>
